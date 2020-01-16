@@ -49,7 +49,7 @@ namespace TechJobsConsole
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
@@ -71,13 +71,18 @@ namespace TechJobsConsole
                 foreach (KeyValuePair<string, string> item in job)
                 {
                     //if job value in lowercase is euqal to value of string in lower
-                    if (item.Value.ToLower() == value.ToLower())
+                    if (item.Value.ToLower().Contains(value.ToLower()))
                     {
                         //add job to job list
                         jobs.Add(job);
+                        break;
+                    
                     }
+
                 }
+
             }
+
             return jobs;
         }
 

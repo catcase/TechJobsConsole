@@ -72,6 +72,7 @@ namespace TechJobsConsole
                     {
                         searchResults = JobData.FindByColumnAndValue(columnChoice, searchTerm);
                         PrintJobs(searchResults);
+
                     }
                 }
             }
